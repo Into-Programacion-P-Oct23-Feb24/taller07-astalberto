@@ -13,9 +13,9 @@ public class Problema04 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int signoA = 1;
+        int signoA = 0;
         String signo = "";
-        String acumulador = "1";
+        String acumulador = "";
         double termino = 0;
         int sumaOresta = 1;
         double resultado = 0;
@@ -29,7 +29,11 @@ public class Problema04 {
             termino = sumaOresta * (1 / i);
             resultado = resultado + termino;
             signoA = signoA + 1;
-            acumulador = String.format("%s %s 1/%s", acumulador, signo, (int) i);
+            if (i <= 1) {
+                acumulador = String.format("%s %s", acumulador , (int) i);
+            } else {
+                acumulador = String.format("%s %s 1/%s", acumulador, signo, (int) i);
+            }
             sumaOresta = sumaOresta * -1;
             i = i + 2;
         }
