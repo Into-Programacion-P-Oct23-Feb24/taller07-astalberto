@@ -16,19 +16,22 @@ public class Problema04 {
         int signoA = 1;
         String signo = "";
         String acumulador = "1";
-        int i = 3;
-
-        while (i <= 15) {
+        double termino = 0;
+        int sumaOresta = 1;
+        double resultado = 0;
+        for (double i = 1; i <= 15; i = i + 2) {
             if (signoA % 2 == 0) {
                 signo = "+";
             } else {
                 signo = "-";
             }
+            termino = sumaOresta * (1 / i);
+            resultado = resultado + termino;
             signoA = signoA + 1;
-            acumulador = String.format("%s %s 1/%s", acumulador, signo, i);
-            i = i + 2;
+            acumulador = String.format("%s %s 1/%s", acumulador, signo, (int) i);
+            sumaOresta = sumaOresta * -1;
         }
-        System.out.println(acumulador);
+        System.out.printf("%s\nResultado: %.4f\n", acumulador, resultado);
     }
 
 }
