@@ -17,20 +17,24 @@ public class Problema05 {
         int signoA = 1;
         String signo = "";
         String acumulador = "1";
-        int i = 3;
-
+        double termino = 0;
+        int sumaOresta = 1;
+        double resultado = 0;
+        double i = 1;
         do {
             if (signoA % 2 == 0) {
                 signo = "+";
             } else {
                 signo = "-";
             }
-            
+             termino = sumaOresta * (1 / i);
+            resultado = resultado + termino;
             signoA = signoA + 1;
-            acumulador = String.format("%s %s 1/%s", acumulador, signo, i);
+            acumulador = String.format("%s %s 1/%s", acumulador, signo, (int) i);
+            sumaOresta = sumaOresta * -1;
             i = i + 2;
         } while (i <= 15);
-        System.out.println(acumulador);
+        System.out.printf("%s\nResultado: %.4f\n", acumulador, resultado);
     }
 
 }

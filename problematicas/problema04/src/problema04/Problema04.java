@@ -19,7 +19,8 @@ public class Problema04 {
         double termino = 0;
         int sumaOresta = 1;
         double resultado = 0;
-        for (double i = 1; i <= 15; i = i + 2) {
+        double i = 1;
+        while (i <= 15) {
             if (signoA % 2 == 0) {
                 signo = "+";
             } else {
@@ -30,6 +31,7 @@ public class Problema04 {
             signoA = signoA + 1;
             acumulador = String.format("%s %s 1/%s", acumulador, signo, (int) i);
             sumaOresta = sumaOresta * -1;
+            i = i + 2;
         }
         System.out.printf("%s\nResultado: %.4f\n", acumulador, resultado);
     }
